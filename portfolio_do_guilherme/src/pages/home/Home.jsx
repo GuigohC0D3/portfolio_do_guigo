@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaDownload } from "react-icons/fa";
-import profileImg from "../../assets/profile.jpg"; // ajuste o caminho da imagem se necessário
+import { FaGithub, FaLinkedin, FaDownload, FaInstagram } from "react-icons/fa";
+import profileImg from "../../assets/profile.jpg";
+import Counter from "../../components/counter/Counter";
 
 const Home = () => {
   return (
@@ -41,18 +42,18 @@ const Home = () => {
               <FaGithub className="text-xl hover:text-[#3da9fc] transition" />
             </a>
             <a
-              href="https://linkedin.com/in/seuusuario"
+              href="https://www.linkedin.com/in/guilherme-ancheschi-werneck-pereira/"
               target="_blank"
               rel="noreferrer"
             >
               <FaLinkedin className="text-xl hover:text-[#3da9fc] transition" />
             </a>
             <a
-              href="https://twitter.com/seuusuario"
+              href="https://www.instagram.com/awdev_studio/?next=%2F"
               target="_blank"
               rel="noreferrer"
             >
-              <FaTwitter className="text-xl hover:text-[#3da9fc] transition" />
+              <FaInstagram className="text-xl hover:text-[#3da9fc] transition" />
             </a>
           </div>
         </motion.div>
@@ -77,23 +78,33 @@ const Home = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
-        className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
+        className="absolute bottom-10 w-full px-6"
       >
-        <div>
-          <h2 className="text-3xl font-bold">12</h2>
-          <p className="text-sm text-[#5f6c7b]">Anos de experiência</p>
-        </div>
-        <div>
-          <h2 className="text-3xl font-bold">26</h2>
-          <p className="text-sm text-[#5f6c7b]">Projetos finalizados</p>
-        </div>
-        <div>
-          <h2 className="text-3xl font-bold">8</h2>
-          <p className="text-sm text-[#5f6c7b]">Tecnologias dominadas</p>
-        </div>
-        <div>
-          <h2 className="text-3xl font-bold">500</h2>
-          <p className="text-sm text-[#5f6c7b]">Commits de código</p>
+        <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          <div>
+            <h2 className="text-3xl font-bold">
+              <Counter to={12} duration={2} />
+            </h2>
+            <p className="text-sm text-[#5f6c7b]">Anos de experiência</p>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold">
+              <Counter to={26} duration={2.5} />
+            </h2>
+            <p className="text-sm text-[#5f6c7b]">Projetos finalizados</p>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold">
+              <Counter to={8} duration={2} />
+            </h2>
+            <p className="text-sm text-[#5f6c7b]">Tecnologias dominadas</p>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold">
+              <Counter to={500} duration={2.6} />
+            </h2>
+            <p className="text-sm text-[#5f6c7b]">Commits de código</p>
+          </div>
         </div>
       </motion.div>
     </section>
